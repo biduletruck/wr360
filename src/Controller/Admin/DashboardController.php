@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Traitement;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -33,8 +34,9 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linktoRoute('Retour au site', 'fas fa-futbol', 'traitement_index');
-        yield MenuItem::linkToCrud('User', null, User::class);
+        yield MenuItem::linktoRoute('Retour au site', null, 'traitement_index');
+        yield MenuItem::linkToCrud('Utilisateurs', null, User::class);
+        yield MenuItem::linkToCrud('Suivi des tickets', null, Traitement::class);
 
     }
 }

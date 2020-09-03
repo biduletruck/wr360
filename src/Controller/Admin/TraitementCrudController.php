@@ -8,6 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class TraitementCrudController extends AbstractCrudController
@@ -25,6 +27,8 @@ class TraitementCrudController extends AbstractCrudController
             BooleanField::new('Traitement', 'Traitement réaliaé'),
             AssociationField::new('Collaborateur', 'MemoId conseiller'),
             DateTimeField::new('CreatedAt', 'date de création'),
+            BooleanField::new('DejaTraite', 'Deja traité'),
+            TextareaField::new('comment', 'commentaire'),
         ];
     }
 
