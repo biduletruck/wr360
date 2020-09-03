@@ -1,0 +1,40 @@
+{{ form_start(form, {'attr': {'class': 'form', 'role' : 'form'}}) }}
+<div class="form">
+
+    <div class="form-group row">
+        <label for="TicketNumber" class="col-sm-4 col-form-label">{{ form_label(form.TicketNumber) }}</label>
+        <div class="col-sm-8">
+            {{ form_errors(form.TicketNumber) }}
+            {{ form_widget(form.TicketNumber) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Traitement" class="col-sm-4 col-form-label">{{ form_label(form.Traitement) }}</label>
+        <div class="col-sm-8 ">
+            {{ form_errors(form.Traitement) }}
+            {{ form_widget(form.Traitement) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Comment" class="col-sm-4 col-form-label">{{ form_label(form.Comment) }}</label>
+        <div class="col-sm-8">
+            {{ form_errors(form.Comment) }}
+            {{ form_widget(form.Comment) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="DejaTraite" class="col-sm-4 col-form-label">{{ form_label(form.DejaTraite) }}</label>
+        <div class="col-sm-8 ">
+            {{ form_errors(form.DejaTraite) }}
+            {{ form_widget(form.DejaTraite) }}
+        </div>
+    </div>
+
+
+
+<button class="btn btn-success">{{ button_label|default('Valider Traitement') }}</button>
+
+{{ form_end(form) }}

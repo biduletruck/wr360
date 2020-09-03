@@ -1,0 +1,31 @@
+{% block nav %}
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container"><a class="navbar-brand" href="{{ path('traitement_new') }}"><img src="{{ asset('build/sitel-logo.png') }}" height="40px"></a>
+{#            <div class="container"><a href="{{ path('matches_day') }}" class="navbar-brand text-uppercase font-weight-bold">Transparent Nav</a>#}
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="{{ path('traitement_new') }}" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
+
+                        {% if is_granted("ROLE_ADMIN") %}
+{#                            <li class="nav-item"><a href="{{ path('users_index') }}" class="nav-link text-uppercase font-weight-bold">Les utilisateurs</a></li>#}
+                            <li class="nav-item"><a href="{{ path('admin') }}" class="nav-link text-uppercase font-weight-bold">Administration</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="navbar-nav align-items-md-end">
+                        <li class="nav-item">
+                            {%  if app.user %}
+                                <li class="nav-item"><a href="{{ path('app_logout') }}" class="nav-link text-uppercase font-weight-bold">Déconnexion</a></li>
+                            {%  else %}
+                                <li class="nav-item"><a href="{{ path('app_login') }}" class="nav-link text-uppercase font-weight-bold">Connexion</a></li>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}

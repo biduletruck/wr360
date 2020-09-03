@@ -1,0 +1,7 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        excel:
+            uri_prefix: /excel/
+            upload_destination: '%kernel.project_dir%/public/excel'
